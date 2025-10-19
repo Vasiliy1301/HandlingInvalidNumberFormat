@@ -1,16 +1,13 @@
-namespace DefaultNamespace;
+namespace HandkingInvalidNumberFormat;
 
 public class Program
 {
     Console.Write("Enter any number (numbers only): ");
     string userInput = Console.ReadLine();
-
-    bool inputValidation = int.TryParse(userInput, out int number);
-
+        
     try
     {
-        if(inputValidation == false)
-            throw new Exception("You entered an incorrect value.");
+        int number = int.Parse(userInput);
         Console.WriteLine($"Result: {number}");
     }
     catch (Exception exception)
